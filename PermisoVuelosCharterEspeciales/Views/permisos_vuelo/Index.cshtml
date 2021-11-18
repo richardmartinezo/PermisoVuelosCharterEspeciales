@@ -1,0 +1,185 @@
+﻿@model IEnumerable<PermisoVuelosCharterEspeciales.Models.permisos_vuelo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tipo_solicitud)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.num_solicitud)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.num_vuelos_solicitados)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cod_oaci)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cedula_ruc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.direccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vigencia_seguro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.proposito_vuelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pasajeros)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.num_pasajeros)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.carga)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre_fletador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telefono_fletador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fax_fletador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.direccion_fletador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email_fletador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.permiso_operador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.especificaciones_operacionales)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.forma_pago)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.observaciones)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre_representante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.detalle_vuelo_complementado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipo_solicitud)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.num_solicitud)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.num_vuelos_solicitados)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cod_oaci)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cedula_ruc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vigencia_seguro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.proposito_vuelo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pasajeros)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.num_pasajeros)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.carga)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre_fletador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefono_fletador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fax_fletador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.direccion_fletador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email_fletador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.permiso_operador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.especificaciones_operacionales)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.forma_pago)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.observaciones)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre_representante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.detalle_vuelo_complementado)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

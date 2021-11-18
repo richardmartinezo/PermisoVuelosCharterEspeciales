@@ -22,7 +22,7 @@ namespace PermisoVuelosCharterEspeciales.Models
         public string proposito_vuelo { get; set; }
         public bool pasajeros { get; set; }
         public int num_pasajeros { get; set; }
-        public string carga { get; set; }
+        public bool carga { get; set; }
         public string nombre_fletador { get; set; }
         public string telefono_fletador { get; set; }
         public string fax_fletador { get; set; }

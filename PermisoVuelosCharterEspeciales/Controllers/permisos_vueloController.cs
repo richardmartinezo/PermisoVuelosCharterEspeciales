@@ -54,7 +54,13 @@ namespace PermisoVuelosCharterEspeciales.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,tipo_solicitud,num_solicitud,num_vuelos_solicitados,fecha,cod_oaci,cedula_ruc,telefono,fax,direccion,email,vigencia_seguro,proposito_vuelo,pasajeros,num_pasajeros,carga,nombre_fletador,telefono_fletador,fax_fletador,direccion_fletador,email_fletador,permiso_operador,especificaciones_operacionales,forma_pago,observaciones,nombre_representante,detalle_vuelo_complementado")] permisos_vuelo permisos_vuelo)
+        public async Task<IActionResult> Create([Bind("Id,tipo_solicitud," +
+            
+            "num_vuelos_solicitados,fecha,cod_oaci,cedula_ruc,telefono,fax,direccion," +
+            "email,vigencia_seguro,proposito_vuelo,pasajeros,num_pasajeros," +
+            "carga,nombre_fletador,telefono_fletador,fax_fletador," +
+            "direccion_fletador,email_fletador,permiso_operador,especificaciones_operacionales," +
+            "forma_pago,observaciones,nombre_representante,detalle_vuelo_complementado")] permisos_vuelo permisos_vuelo)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +92,13 @@ namespace PermisoVuelosCharterEspeciales.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,tipo_solicitud,num_solicitud,num_vuelos_solicitados,fecha,cod_oaci,cedula_ruc,telefono,fax,direccion,email,vigencia_seguro,proposito_vuelo,pasajeros,num_pasajeros,carga,nombre_fletador,telefono_fletador,fax_fletador,direccion_fletador,email_fletador,permiso_operador,especificaciones_operacionales,forma_pago,observaciones,nombre_representante,detalle_vuelo_complementado")] permisos_vuelo permisos_vuelo)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,tipo_solicitud," +
+           
+            "num_vuelos_solicitados,fecha,cod_oaci,cedula_ruc,telefono,fax,direccion," +
+            "email,vigencia_seguro,proposito_vuelo,pasajeros,num_pasajeros,carga," +
+            "nombre_fletador,telefono_fletador,fax_fletador,direccion_fletador," +
+            "email_fletador,permiso_operador,especificaciones_operacionales,forma_pago," +
+            "observaciones,nombre_representante,detalle_vuelo_complementado")] permisos_vuelo permisos_vuelo)
         {
             if (id != permisos_vuelo.Id)
             {

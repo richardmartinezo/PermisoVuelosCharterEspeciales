@@ -83,10 +83,10 @@
                 <input asp-for="num_pasajeros" class="form-control" />
                 <span asp-validation-for="num_pasajeros" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="carga" class="control-label"></label>
-                <input asp-for="carga" class="form-control" />
-                <span asp-validation-for="carga" class="text-danger"></span>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="carga" /> @Html.DisplayNameFor(model => model.carga)
+                </label>
             </div>
             <div class="form-group">
                 <label asp-for="nombre_fletador" class="control-label"></label>

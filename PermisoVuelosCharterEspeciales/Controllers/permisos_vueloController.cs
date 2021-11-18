@@ -54,8 +54,7 @@ namespace PermisoVuelosCharterEspeciales.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,tipo_solicitud," +
-            
+        public async Task<IActionResult> Create([Bind("Id,tipo_solicitud," +            
             "num_vuelos_solicitados,fecha,cod_oaci,cedula_ruc,telefono,fax,direccion," +
             "email,vigencia_seguro,proposito_vuelo,pasajeros,num_pasajeros," +
             "carga,nombre_fletador,telefono_fletador,fax_fletador," +
@@ -92,8 +91,7 @@ namespace PermisoVuelosCharterEspeciales.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,tipo_solicitud," +
-           
+        public async Task<IActionResult> Edit(int id, [Bind("Id,tipo_solicitud," +           
             "num_vuelos_solicitados,fecha,cod_oaci,cedula_ruc,telefono,fax,direccion," +
             "email,vigencia_seguro,proposito_vuelo,pasajeros,num_pasajeros,carga," +
             "nombre_fletador,telefono_fletador,fax_fletador,direccion_fletador," +

@@ -13,18 +13,24 @@ namespace PermisoVuelosCharterEspeciales.Controllers
     public class permisos_vueloController : Controller
     {
         private readonly PermisoVuelosCharterEspecialesContext _context;
+        private Validador_Nulos validador_Nulos;
 
         public permisos_vueloController(PermisoVuelosCharterEspecialesContext context)
         {
             _context = context;
         }
-
-        // GET: permisos_vuelo
-        public async Task<IActionResult> Index()
+        public ActionResult Index()
         {
-            return View(await _context.permisos_vuelo.ToListAsync());
+            return View();
         }
 
+        // GET: permisos_vuelo
+        /*   public async Task<IActionResult> Index()
+           {
+               // return View(await _context.permisos_vuelo.ToListAsync());
+               return View();
+           }
+        */
         // GET: permisos_vuelo/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -54,13 +60,15 @@ namespace PermisoVuelosCharterEspeciales.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,tipo_solicitud," +            
-            "num_vuelos_solicitados,fecha,cod_oaci,cedula_ruc,telefono,fax,direccion," +
-            "email,vigencia_seguro,proposito_vuelo,pasajeros,num_pasajeros," +
-            "carga,nombre_fletador,telefono_fletador,fax_fletador," +
-            "direccion_fletador,email_fletador,permiso_operador,especificaciones_operacionales," +
-            "forma_pago,observaciones,nombre_representante,detalle_vuelo_complementado")] permisos_vuelo permisos_vuelo)
+        public async Task<IActionResult> Create([Bind("Id,tipo_solicitud,num_vuelos_solicitados," +
+            "fecha,cod_oaci,cedula_ruc,telefono,fax,direccion,email,vigencia_seguro," +
+            "proposito_vuelo,pasajeros,num_pasajeros,carga,nombre_fletador,telefono_" +
+            "fletador,fax_fletador,direccion_fletador,email_fletador,permiso_operador," +
+            "especificaciones_operacionales,forma_pago,observaciones,nombre_representante," +
+            "detalle_vuelo_complementado")] permisos_vuelo permisos_vuelo)
         {
+            this.validador_Nulos = new Validador_Nulos();
+            permisos_vuelo = validador_Nulos.permiso_validado(permisos_vuelo);
             if (ModelState.IsValid)
             {
                 _context.Add(permisos_vuelo);
@@ -91,10 +99,10 @@ namespace PermisoVuelosCharterEspeciales.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,tipo_solicitud," +           
-            "num_vuelos_solicitados,fecha,cod_oaci,cedula_ruc,telefono,fax,direccion," +
-            "email,vigencia_seguro,proposito_vuelo,pasajeros,num_pasajeros,carga," +
-            "nombre_fletador,telefono_fletador,fax_fletador,direccion_fletador," +
+        public async Task<IActionResult> Edit(int id, [Bind("Id,tipo_solicitud," +
+            "num_vuelos_solicitados,fecha,cod_oaci,cedula_ruc,telefono,fax," +
+            "direccion,email,vigencia_seguro,proposito_vuelo,pasajeros,num_pasajeros," +
+            "carga,nombre_fletador,telefono_fletador,fax_fletador,direccion_fletador," +
             "email_fletador,permiso_operador,especificaciones_operacionales,forma_pago," +
             "observaciones,nombre_representante,detalle_vuelo_complementado")] permisos_vuelo permisos_vuelo)
         {
@@ -107,6 +115,7 @@ namespace PermisoVuelosCharterEspeciales.Controllers
             {
                 try
                 {
+                   
                     _context.Update(permisos_vuelo);
                     await _context.SaveChangesAsync();
                 }

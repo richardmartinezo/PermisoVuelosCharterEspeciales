@@ -4,159 +4,170 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>permisos_vuelo</h4>
+<h4>Permisos de Vuelo</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
+    
+    
+        <form asp-action="Create" id="formulario">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="tipo_solicitud" class="control-label"></label>
-                <input asp-for="tipo_solicitud" class="form-control" />
-                <span asp-validation-for="tipo_solicitud" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <!--  <label asp-for="num_solicitud" class="control-label"></label>
-     <input asp-for="num_solicitud" class="form-control" />
-     <span asp-validation-for="num_solicitud" class="text-danger"></span>-->
-            </div>
-            <div class="form-group">
-                <label asp-for="num_vuelos_solicitados" class="control-label"></label>
-                <input asp-for="num_vuelos_solicitados" class="form-control" />
-                <span asp-validation-for="num_vuelos_solicitados" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="fecha" class="control-label"></label>
-                <input asp-for="fecha" class="form-control" />
-                <span asp-validation-for="fecha" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="cod_oaci" class="control-label"></label>
-                <input asp-for="cod_oaci" class="form-control" />
-                <span asp-validation-for="cod_oaci" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="cedula_ruc" class="control-label"></label>
-                <input asp-for="cedula_ruc" class="form-control" />
-                <span asp-validation-for="cedula_ruc" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="telefono" class="control-label"></label>
-                <input asp-for="telefono" class="form-control" />
-                <span asp-validation-for="telefono" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="fax" class="control-label"></label>
-                <input asp-for="fax" class="form-control" />
-                <span asp-validation-for="fax" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="direccion" class="control-label"></label>
-                <input asp-for="direccion" class="form-control" />
-                <span asp-validation-for="direccion" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="email" class="control-label"></label>
-                <input asp-for="email" class="form-control" />
-                <span asp-validation-for="email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="vigencia_seguro" class="control-label"></label>
-                <input asp-for="vigencia_seguro" class="form-control" />
-                <span asp-validation-for="vigencia_seguro" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="proposito_vuelo" class="control-label"></label>
-                <input asp-for="proposito_vuelo" class="form-control" />
-                <span asp-validation-for="proposito_vuelo" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="pasajeros" /> @Html.DisplayNameFor(model => model.pasajeros)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="num_pasajeros" class="control-label"></label>
-                <input asp-for="num_pasajeros" class="form-control" />
-                <span asp-validation-for="num_pasajeros" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="carga" /> @Html.DisplayNameFor(model => model.carga)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="nombre_fletador" class="control-label"></label>
-                <input asp-for="nombre_fletador" class="form-control" />
-                <span asp-validation-for="nombre_fletador" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="telefono_fletador" class="control-label"></label>
-                <input asp-for="telefono_fletador" class="form-control" />
-                <span asp-validation-for="telefono_fletador" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="fax_fletador" class="control-label"></label>
-                <input asp-for="fax_fletador" class="form-control" />
-                <span asp-validation-for="fax_fletador" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="direccion_fletador" class="control-label"></label>
-                <input asp-for="direccion_fletador" class="form-control" />
-                <span asp-validation-for="direccion_fletador" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="email_fletador" class="control-label"></label>
-                <input asp-for="email_fletador" class="form-control" />
-                <span asp-validation-for="email_fletador" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="permiso_operador" class="form-group form-check">
-                    <input asp-for="permiso_operador" class="form-check-input" />@Html.DisplayNameFor(model => model.permiso_operador)
-                </label>
-                
-               
-            </div>
-            <div class="form-group">
-                <label asp-for="especificaciones_operacionales" class="form-group form-check">
-                    <input asp-for="especificaciones_operacionales" class="form-check-input" /> @Html.DisplayNameFor(model => model.especificaciones_operacionales)
-                </label>
-               
-               
-            </div>
-            <div class="form-group">
-                <label asp-for="forma_pago" class="control-label"></label>
-                <input asp-for="forma_pago" class="form-control" />
-                <span asp-validation-for="forma_pago" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="observaciones" class="control-label"></label>
-                <input asp-for="observaciones" class="form-control" />
-                <span asp-validation-for="observaciones" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="nombre_representante" class="control-label"></label>
-                <input asp-for="nombre_representante" class="form-control" />
-                <span asp-validation-for="nombre_representante" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="detalle_vuelo_complementado" class="control-label"></label>
-                <input asp-for="detalle_vuelo_complementado" class="form-control" />
-                <span asp-validation-for="detalle_vuelo_complementado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label asp-for="tipo_solicitud" class="control-label">Tipo de Solicitud:</label>
+                        <input asp-for="tipo_solicitud" class="form-control" />
+                        <span asp-validation-for="tipo_solicitud" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="num_vuelos_solicitados" class="control-label">Numero de vuelos:</label>
+                        <input asp-for="num_vuelos_solicitados" class="form-control" />
+                        <span asp-validation-for="num_vuelos_solicitados" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="fecha" class="control-label">Fecha: </label>
+                        <input asp-for="fecha" class="form-control" />
+                        <span asp-validation-for="fecha" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="cod_oaci" class="control-label">Compania: </label>
+                        <input asp-for="cod_oaci" class="form-control" />
+                        <span asp-validation-for="cod_oaci" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="cedula_ruc" class="control-label">Cedula: </label>
+                        <input asp-for="cedula_ruc" class="form-control" />
+                        <span asp-validation-for="cedula_ruc" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="telefono" class="control-label">Telefono: </label>
+                        <input asp-for="telefono" class="form-control" />
+                        <span asp-validation-for="telefono" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="fax" class="control-label">Fax: </label>
+                        <input asp-for="fax" class="form-control" />
+                        <span asp-validation-for="fax" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="direccion" class="control-label">Direccion: </label>
+                        <input asp-for="direccion" class="form-control" />
+                        <span asp-validation-for="direccion" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="email" class="control-label">Email: </label>
+                        <input asp-for="email" class="form-control" />
+                        <span asp-validation-for="email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="vigencia_seguro" class="control-label">Vigencia del Seguro: </label>
+                        <input asp-for="vigencia_seguro" class="form-control" />
+                        <span asp-validation-for="vigencia_seguro" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="proposito_vuelo" class="control-label">Proposito del vuelo: </label>
+                        <input asp-for="proposito_vuelo" class="form-control" />
+                        <span asp-validation-for="proposito_vuelo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="pasajeros" /> Pasajeros:
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="num_pasajeros" class="control-label">Numero de Pasajeros: </label>
+                        <input asp-for="num_pasajeros" class="form-control" />
+                        <span asp-validation-for="num_pasajeros" class="text-danger"></span>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="carga" /> Carga:
+                        </label>
+                    </div>
+
+
+                </div>
+                <div class="col-6">
+                    
+                    <div class="form-group">
+                        <label asp-for="nombre_fletador" class="control-label">Nombre Fletador:</label>
+                        <input asp-for="nombre_fletador" class="form-control" />
+                        <span asp-validation-for="nombre_fletador" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="telefono_fletador" class="control-label">Telefono Fletador:</label>
+                        <input asp-for="telefono_fletador" class="form-control" />
+                        <span asp-validation-for="telefono_fletador" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="fax_fletador" class="control-label">Fax Fletador: </label>
+                        <input asp-for="fax_fletador" class="form-control" />
+                        <span asp-validation-for="fax_fletador" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="direccion_fletador" class="control-label">Direccion Fletador: </label>
+                        <input asp-for="direccion_fletador" class="form-control" />
+                        <span asp-validation-for="direccion_fletador" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="email_fletador" class="control-label">Email Fletador: </label>
+                        <input asp-for="email_fletador" class="form-control" />
+                        <span asp-validation-for="email_fletador" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="permiso_operador" class="form-group form-check">
+                            <input asp-for="permiso_operador" class="form-check-input" />Permiso Operador:
+                        </label>
+
+
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="especificaciones_operacionales" class="form-group form-check">
+                            <input asp-for="especificaciones_operacionales" class="form-check-input" /> Especificaciones Operacionales:
+                        </label>
+
+
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="forma_pago" class="control-label">Forma de Pago: </label>
+                        <input asp-for="forma_pago" class="form-control" />
+                        <span asp-validation-for="forma_pago" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="observaciones" class="control-label">Observaciones: </label>
+                        <input asp-for="observaciones" class="form-control" />
+                        <span asp-validation-for="observaciones" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="nombre_representante" class="control-label">Nombre del Representante: </label>
+                        <input asp-for="nombre_representante" class="form-control" />
+                        <span asp-validation-for="nombre_representante" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="detalle_vuelo_complementado" class="control-label">Detalle del Vuelo:</label>
+                        <input asp-for="detalle_vuelo_complementado" class="form-control" />
+                        <span asp-validation-for="detalle_vuelo_complementado" class="text-danger"></span>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <input type="submit" value="Create" class="btn btn-primary" />
+
+
+        </form>
+      </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    
 }
+<script type="text/javascript">
+    function form_submit() {
+        document.getElementById("formulario").form_submit();
+    }
+
+
+</script>

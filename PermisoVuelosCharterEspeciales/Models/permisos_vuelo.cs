@@ -7,32 +7,32 @@ namespace PermisoVuelosCharterEspeciales.Models
 {
     public class permisos_vuelo
     {
-        public int Id { get; set; }
-        public string tipo_solicitud { get; set; }
-        public Int64 num_solicitud { get; set; }
-        public Int64 num_vuelos_solicitados { get; set; }
-        public DateTime fecha { get; set; }
-        public string cod_oaci { get; set; }
-        public string cedula_ruc { get; set; }
-        public string telefono { get; set; }
-        public string fax { get; set; }
-        public string direccion { get; set; }
-        public string email { get; set; }
-        public string vigencia_seguro { get; set; }
-        public string proposito_vuelo { get; set; }
+        public int? Id { get; set; }
+        public string? tipo_solicitud { get; set; }
+        public Int64? num_solicitud { get; set; }
+        public Int64? num_vuelos_solicitados { get; set; }
+        public DateTime? fecha { get; set; }
+        public string? cod_oaci { get; set; }
+        public string? cedula_ruc { get; set; }
+        public string? telefono { get; set; }
+        public string? fax { get; set; }
+        public string? direccion { get; set; }
+        public string? email { get; set; }
+        public string? vigencia_seguro { get; set; }
+        public string? proposito_vuelo { get; set; }
         public bool pasajeros { get; set; }
-        public Int64 num_pasajeros { get; set; }
+        public Int64? num_pasajeros { get; set; }
         public bool carga { get; set; }
-        public string nombre_fletador { get; set; }
-        public string telefono_fletador { get; set; }
-        public string fax_fletador { get; set; }
-        public string direccion_fletador { get; set; }
-        public string email_fletador { get; set; }
+        public string? nombre_fletador { get; set; }
+        public string? telefono_fletador { get; set; }
+        public string? fax_fletador { get; set; }
+        public string? direccion_fletador { get; set; }
+        public string? email_fletador { get; set; }
         public bool permiso_operador { get; set; }
         public bool especificaciones_operacionales { get; set; }
-        public string forma_pago { get; set; }
-        public string observaciones { get; set; }
-        public string nombre_representante { get; set; }
-        public string detalle_vuelo_complementado { get; set; }
+        public string? forma_pago { get; set; }
+        public string? observaciones { get; set; }
+        public string? nombre_representante { get; set; }
+        public string? detalle_vuelo_complementado { get; set; }
     }
 }

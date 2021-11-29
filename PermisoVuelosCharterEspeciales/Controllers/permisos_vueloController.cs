@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -19,18 +20,14 @@ namespace PermisoVuelosCharterEspeciales.Controllers
         {
             _context = context;
         }
-        public ActionResult Index()
+       
+        // GET: permisos_vuelo
+        public async Task<IActionResult> Index()
         {
-            return View();
+             return View(await _context.permisos_vuelo.ToListAsync());
+          
         }
 
-        // GET: permisos_vuelo
-        /*   public async Task<IActionResult> Index()
-           {
-               // return View(await _context.permisos_vuelo.ToListAsync());
-               return View();
-           }
-        */
         // GET: permisos_vuelo/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -52,7 +49,19 @@ namespace PermisoVuelosCharterEspeciales.Controllers
         // GET: permisos_vuelo/Create
         public IActionResult Create()
         {
-            return View();
+            List<tipo_permiso> tipo_Permisos = (from d in _context.tipo_Permisos
+                                                select new tipo_permiso {
+                                                    Id = d.Id,
+                                                    nombre = d.nombre,
+                                                    codigo=d.codigo
+                                                }
+                                                ).ToList();
+
+            List<SelectListItem> listItems = tipo_Permisos.ConvertAll(d=>{ 
+            
+            
+            });
+                return View();
         }
 
         // POST: permisos_vuelo/Create
@@ -67,13 +76,14 @@ namespace PermisoVuelosCharterEspeciales.Controllers
             "especificaciones_operacionales,forma_pago,observaciones,nombre_representante," +
             "detalle_vuelo_complementado")] permisos_vuelo permisos_vuelo)
         {
+            //HomeController homeController = new HomeController();
             this.validador_Nulos = new Validador_Nulos();
             permisos_vuelo = validador_Nulos.permiso_validado(permisos_vuelo);
             if (ModelState.IsValid)
             {
                 _context.Add(permisos_vuelo);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Create));
             }
             return View(permisos_vuelo);
         }
@@ -121,7 +131,7 @@ namespace PermisoVuelosCharterEspeciales.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!permisos_vueloExists(permisos_vuelo.Id))
+                    if (!permisos_vueloExists((int)permisos_vuelo.Id))
                     {
                         return NotFound();
                     }

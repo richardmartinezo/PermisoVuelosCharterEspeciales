@@ -15,5 +15,6 @@ namespace PermisoVuelosCharterEspeciales.Data
         }
 
         public DbSet<PermisoVuelosCharterEspeciales.Models.permisos_vuelo> permisos_vuelo { get; set; }
+        public DbSet<PermisoVuelosCharterEspeciales.Models.tipo_permiso> tipo_Permisos { get; set; }
     }
 }

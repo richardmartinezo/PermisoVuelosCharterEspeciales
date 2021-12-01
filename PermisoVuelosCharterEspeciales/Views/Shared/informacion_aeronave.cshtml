@@ -1,0 +1,47 @@
+﻿@model PermisoVuelosCharterEspeciales.Models.informacion_aeronave
+
+<h4>informacion_aeronave</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="informacion_aeronave">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="permiso_vuelos_id" class="control-label"></label>
+                <input asp-for="permiso_vuelos_id" class="form-control" />
+                <span asp-validation-for="permiso_vuelos_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="marca" class="control-label"></label>
+                <input asp-for="marca" class="form-control" />
+                <span asp-validation-for="marca" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tipo" class="control-label"></label>
+                <input asp-for="tipo" class="form-control" />
+                <span asp-validation-for="tipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="matricula" class="control-label"></label>
+                <input asp-for="matricula" class="form-control" />
+                <span asp-validation-for="matricula" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mtow" class="control-label"></label>
+                <input asp-for="mtow" class="form-control" />
+                <span asp-validation-for="mtow" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -15,6 +15,10 @@ namespace PermisoVuelosCharterEspeciales.Data
         }
 
         public DbSet<PermisoVuelosCharterEspeciales.Models.permisos_vuelo> permisos_vuelo { get; set; }
-        public DbSet<PermisoVuelosCharterEspeciales.Models.tipo_permiso> tipo_Permisos { get; set; }
+        public DbSet<PermisoVuelosCharterEspeciales.Models.tipo_permiso> tipo_Permiso { get; set; }
+        public DbSet<PermisoVuelosCharterEspeciales.Models.forma_pago> forma_pago { get; set; }
+        public DbSet<PermisoVuelosCharterEspeciales.Models.informacion_aeronave> informacion_aeronave { get; set; }
+
+
     }
 }

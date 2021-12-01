@@ -49,19 +49,25 @@ namespace PermisoVuelosCharterEspeciales.Controllers
         // GET: permisos_vuelo/Create
         public IActionResult Create()
         {
-            List<tipo_permiso> tipo_Permisos = (from d in _context.tipo_Permisos
-                                                select new tipo_permiso {
-                                                    Id = d.Id,
-                                                    nombre = d.nombre,
-                                                    codigo=d.codigo
-                                                }
-                                                ).ToList();
+            dynamic gridmodel = new ExpandoObject();
+            var permisos_vuelo = new permisos_vuelo();
+            var informacion_aeronave = new informacion_aeronave();
+            gridmodel.permisos_vuelo = permisos_vuelo;
+            gridmodel.informacion_aeronave = informacion_aeronave;
+            var tipos_de_permiso = _context.tipo_Permiso.ToList();
+            var forma_pago = _context.forma_pago.ToList();
+            if (tipos_de_permiso!=null) {
+                ViewBag.tipo_permiso = tipos_de_permiso;                
+            }
+            if (forma_pago!=null) {
+                ViewBag.forma_pago = forma_pago;
+            }
+            if (informacion_aeronave!=null) {
+                ViewBag.informacion_aeronave = informacion_aeronave;
+            }
+            
 
-            List<SelectListItem> listItems = tipo_Permisos.ConvertAll(d=>{ 
-            
-            
-            });
-                return View();
+               return View();
         }
 
         // POST: permisos_vuelo/Create
@@ -77,15 +83,17 @@ namespace PermisoVuelosCharterEspeciales.Controllers
             "detalle_vuelo_complementado")] permisos_vuelo permisos_vuelo)
         {
             //HomeController homeController = new HomeController();
+            dynamic gridmodel = new ExpandoObject();
             this.validador_Nulos = new Validador_Nulos();
             permisos_vuelo = validador_Nulos.permiso_validado(permisos_vuelo);
+            gridmodel.permisos_vuelo = permisos_vuelo;
             if (ModelState.IsValid)
             {
                 _context.Add(permisos_vuelo);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Create));
+                return RedirectToAction(nameof(HomeController.Index));
             }
-            return View(permisos_vuelo);
+            return View(gridmodel);
         }
 
         // GET: permisos_vuelo/Edit/5
